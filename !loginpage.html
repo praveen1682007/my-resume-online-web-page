@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Login Page</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            transition: background-image 1s ease-in-out;
+        }
+        .login-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            margin: 100px auto;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkblue;
+        }
+        h3 {
+            color: blue;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>WELCOME</h1>
+        <form onsubmit="return validateLogin(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <h3>Forgot Password?</h3>
+    </div>
+
+    <script>
+        // Background slideshow
+        const wallpapers = [
+            "https://picsum.photos/1920/1080?random=1",
+            "https://picsum.photos/1920/1080?random=2",
+            "https://picsum.photos/1920/1080?random=3",
+            "https://picsum.photos/1920/1080?random=4"
+        ];
+        let index = 0;
+        function changeWallpaper() {
+            document.body.style.backgroundImage = `url(${wallpapers[index]})`;
+            index = (index + 1) % wallpapers.length;
+        }
+        changeWallpaper();
+        setInterval(changeWallpaper, 5000);
+
+        // Set username & password
+        const correctUsername = "praveen";
+        const correctPassword = "12345";
+
+        // Validate login
+        function validateLogin(event) {
+            event.preventDefault(); // stop refresh
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if (user === correctUsername && pass === correctPassword) {
+                alert("Login Successful ✅");
+                window.location.href = "index.html"; // redirect
+            } else {
+                alert("Invalid Username or Password ❌");
+            }
+        }
+    </script>
+</body>
+</html>
