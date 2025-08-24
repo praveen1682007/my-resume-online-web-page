@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="section">
+    <h1>Contact Me</h1>
+    <form onsubmit="return validateForm(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" rows="4" required></textarea><br><br>
+
+      <button type="submit">Submit</button>
+    </form>
+    <a href="index.html"></a>Back to Home</a>
+  </div>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      alert("Thank you, " + name + "! Your message has been submitted.");
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
