@@ -38,7 +38,7 @@
       margin-bottom: 20px;
       font-size: 24px;
       color: #fff;
-      animation: typing 3s steps(20) infinite;
+      animation: typing 3s steps(20) forwards;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid white;
@@ -114,32 +114,25 @@
     }
 
     @keyframes slideUp {
-      0% {
-        transform: translateY(50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes zoomFade {
       0% {
-        background-image: url('https://picsum.photos/1920/1080?random=1');
+        background-image: url('C:/Users/TUPAKULA PRAVEEN/Downloads/praveen pic2.jpg');
       }
       50% {
-        background-image: url('https://picsum.photos/1920/1080?random=1');
+        background-image: url('C:/Users/TUPAKULA PRAVEEN/Downloads/praveen pik.jpg');
       }
       100% {
-        background-image: url('https://picsum.photos/1920/1080?random=1');
+        background-image: url('C:/Users/TUPAKULA PRAVEEN/Downloads/praveen pic2.jpg');
       }
     }
 
     @keyframes typing {
-      0% { width: 0 }
-      50% { width: 100% }
-      100% { width: 0 }
+      0% { width: 0; }
+      100% { width: 100%; }
     }
 
     @media screen and (max-width: 400px) {
@@ -153,7 +146,7 @@
 <body>
 
   <div class="login-box">
-    <h1>WELCOME USER</h1>
+    <h1>HELLOW GUYS</h1>
     <form onsubmit="return validateLogin(event)">
       <div class="input-group">
         <input type="text" id="username" placeholder=" " required />
@@ -181,7 +174,7 @@
 
       if (user === correctUsername && pass === correctPassword) {
         alert("✅ Login Successful!");
-        window.location.href ="main.html";
+        window.location.href = "main.html";
       } else {
         alert("❌ Invalid Username or Password");
       }
@@ -190,5 +183,3 @@
 
 </body>
 </html>
-
-
